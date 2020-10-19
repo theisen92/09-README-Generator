@@ -1,11 +1,8 @@
-// function to generate markdown for README
-// Images and URLs grabbed from - https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
 function generateMarkdown(data) {
   var license = "";
   var bImg = "";
   var bURL = "";
-  // the license choice
-  // Images and URLs grabbed from - https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+
   switch (data.license) {
     case "Apache":
       license = "";
@@ -38,41 +35,42 @@ function generateMarkdown(data) {
       break;
   }
 
-  return `#${data.title}
-  #Discription
+  return `# ${data.title}
+  
+  ## Discription
 
   ${data.descript}
 
-  #Table of Contents 
+  ## Table of Contents 
 
-  - [Installation](#Installation)
-  - [Usage](#Usage)
-  - [License](#License)
-  - [Contributing](#Contributing)
-  - [Tests](#Tests)
-  - [Questions](#Questions)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
 
-  #Installation
+  ### Installation
 
   ${data.install}
 
-  #Usage
+  ### Usage
 
   ${data.use}
 
-  #License
+  ### License
 
   [![License: ${license}](${bImg})](${bURL})
 
-  #Contributing
+  ### Contributing
 
   ${data.credit}
 
-  #Tests
+  ### Tests
 
   ${data.test}
 
-  #Questions
+  ### Questions
 
   If you have any additional questions,
   Please reach out to me by email or through Github

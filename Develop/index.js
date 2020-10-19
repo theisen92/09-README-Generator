@@ -54,13 +54,21 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(`Your README was made - it is in the "gen-readme" folder!`);
+  });
+}
 
 // function to initialize program
 function init() {
   inquirer.prompt(questions).then(function (answer) {
     var mD = generateMarkdown(answer);
-    console.log(mD);
+    writeToFile("./gen-readme/genREADME.md", mD);
   });
 }
 
